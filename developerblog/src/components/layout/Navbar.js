@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import {connect} from 'react-redux'
 import PropTypes from 'prop-types'
 import {logout} from '../../actions/auth'
+import { NavLink, Route } from 'react-router-dom/cjs/react-router-dom.min';
 
 const Navbar = ({logout,auth: {isAuthenticated,loading}}) => {
   const authLinks = (
@@ -25,7 +26,7 @@ const Navbar = ({logout,auth: {isAuthenticated,loading}}) => {
   return(
       <nav className="navbar bg-dark">
         <h1>
-          <Link to="/"><i className="fas fa-code"></i> DevConnector</Link>
+          <Link to="/"><i className="fas fa-code"></i> DevTalks</Link>
         </h1>
         { !loading && (<Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>)}
       </nav>
